@@ -16,13 +16,6 @@ const fixedOverflowWidgets = true;
 const scrollBeyondLastLine = false;
 const unicodeHighlight = { ambiguousCharacters };
 const { light: theme } = registerHighlighter();
-const defaultOptions = {
-  automaticLayout,
-  fixedOverflowWidgets,
-  scrollBeyondLastLine,
-  theme,
-  unicodeHighlight,
-};
 const props = withDefaults(
   defineProps<{
     id?: string;
@@ -32,7 +25,7 @@ const props = withDefaults(
   {
     id: uuid(),
     modelValue: "",
-    options: () => defaultOptions,
+    options: () => ({}),
   },
 );
 const emit = defineEmits(["update:modelValue"]);
@@ -46,9 +39,15 @@ const model = getOrCreateModel(
 onMounted(() => {
   if (monaco.value) {
     editorInstance = editor.create(monaco.value, {
-      ...defaultOptions,
+      ...{
+        automaticLayout,
+        fixedOverflowWidgets,
+        model,
+        scrollBeyondLastLine,
+        theme,
+        unicodeHighlight,
+      },
       ...props.options,
-      model,
     });
     editorInstance.onDidChangeModelContent(() => {
       emit("update:modelValue", editorInstance?.getValue());
