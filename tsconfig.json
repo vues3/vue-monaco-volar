@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
+    "skipLibCheck": true,
     "strict": true,
     "module": "preserve",
-    "target": "esnext"
+    "target": "esnext",
+    "noEmit": true
   }
 }
