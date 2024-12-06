@@ -1,6 +1,6 @@
 {
   "name": "@vues3/vue-monaco-volar",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "type": "module",
   "main": "dist/vue-monaco-volar.js",
   "types": "dist/vue-monaco-volar.d.ts",
