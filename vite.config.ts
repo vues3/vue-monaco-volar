@@ -27,13 +27,8 @@ const entry = "./src/index.ts";
 const formats: LibraryFormats[] = ["es"];
 const lib = { entry, fileName, formats };
 const build = { lib, rollupOptions };
-// const base = "./";
+const base = "./";
 const path = "path-browserify";
 const alias = { path };
 const resolve = { alias };
-export default defineConfig({
-  // base,
-  build,
-  plugins,
-  resolve,
-});
+export default defineConfig({ base, build, plugins, resolve });
