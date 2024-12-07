@@ -6,8 +6,8 @@ import {
   activateMarkers,
   registerProviders,
 } from "@volar/monaco";
+import VueWorker from "@vues3/monaco-volar-worker/dist/vue.worker?worker";
 import * as languageConfigs from "@vues3/monaco-volar-worker/src/language-configs";
-import VueWorker from "@vues3/monaco-volar-worker/src/vue.worker?worker";
 import { editor, languages } from "monaco-editor-core";
 import EditorWorker from "monaco-editor-core/esm/vs/editor/editor.worker?worker";
 
