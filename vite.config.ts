@@ -14,9 +14,8 @@ const rollupOptions = { external, output };
 const rollupTypes = true;
 const apply = "build";
 const fileName = "vue-monaco-volar";
+const filePath = path.resolve(path.resolve("dist"), `${fileName}.js`);
 const writeBundle = () => {
-  const outDir = path.resolve("dist");
-  const filePath = path.resolve(outDir, `${fileName}.js`);
   const content = fs.readFileSync(filePath, "utf-8");
   fs.writeFileSync(filePath, `import './${fileName}.css'\n${content}`);
 };
@@ -27,4 +26,5 @@ const entry = "./src/index.ts";
 const formats: LibraryFormats[] = ["es"];
 const lib = { entry, fileName, formats };
 const build = { lib, rollupOptions };
-export default defineConfig({ build, plugins });
+const base = "./";
+export default defineConfig({ base, build, plugins });
