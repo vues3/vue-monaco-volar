@@ -27,10 +27,4 @@ const formats: LibraryFormats[] = ["es"];
 const lib = { entry, fileName, formats };
 const build = { lib, rollupOptions };
 const base = "./";
-const optimizeDeps = {
-  exclude: [
-    "monaco-editor-core/esm/vs/editor/editor.worker",
-    "@vues3/monaco-volar-worker/src/vue.worker",
-  ],
-};
-export default defineConfig({ base, build, optimizeDeps, plugins });
+export default defineConfig({ base, build, plugins });
