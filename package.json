@@ -4,6 +4,9 @@
   "type": "module",
   "main": "dist/vue-monaco-volar.js",
   "types": "dist/vue-monaco-volar.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "lint": "eslint --ext .js,.ts,.vue ./",
     "format": "prettier --write \"**/*.{js,ts,vue,scss,html,md,json}\" --ignore-path .gitignore",
