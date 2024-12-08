@@ -45,13 +45,6 @@ const build: BuildEnvironmentOptions = {
   cssCodeSplit: true,
   lib,
   minify: false,
-  rollupOptions: {
-    external: ["vue"],
-    output: {
-      chunkFileNames: "chunks/[name]-[hash].js",
-    },
-  },
-  target: "esnext",
 };
 const worker = (() => {
   /** Prevents replacing strings where they are followed by a single equals sign. */
@@ -89,17 +82,4 @@ const plugins: PluginOption[] = (() => {
   })();
   return [pluginVue(), dts({ rollupTypes }), patchCssFiles];
 })();
-export default defineConfig({
-  base,
-  build,
-  optimizeDeps: {
-    // avoid late discovered deps
-    include: [
-      "typescript",
-      "monaco-editor-core/esm/vs/editor/editor.worker",
-      "@vues3/monaco-volar-worker/src/vue.worker",
-    ],
-  },
-  plugins,
-  worker,
-});
+export default defineConfig({ base, build, plugins, worker });
