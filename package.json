@@ -13,11 +13,12 @@
     "build": "tsc && vite build --emptyOutDir"
   },
   "dependencies": {
+    "@rollup/plugin-replace": "^6.0.1",
     "@vitejs/plugin-vue": "^5.2.1",
     "@volar/monaco": "^2.4.10",
-    "@vues3/monaco-volar-worker": "^0.5.20",
+    "@vues3/monaco-volar-worker": "^0.5.23",
     "monaco-editor-core": "^0.52.0",
-    "uuid-random": "^1.3.2",
+    "rollup": "^4.28.1",
     "vite": "^6.0.3",
     "vite-plugin-dts": "^4.3.0",
     "vue": "^3.5.13"
