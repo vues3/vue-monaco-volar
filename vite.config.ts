@@ -81,7 +81,8 @@ const plugins: PluginOption[] = (() => {
       );
       writeFileSync(
         filePath,
-        `import "./${fileName}.css";\n${readFileSync(filePath, "utf-8")}`,
+        // `import "./${fileName}.css";\n${readFileSync(filePath, "utf-8")}`,
+        `import "./index.css";\n${readFileSync(filePath, "utf-8")}`,
       );
     };
     return { apply, name, writeBundle };
